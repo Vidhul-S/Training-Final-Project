@@ -1,0 +1,102 @@
+server:
+  port: 8099
+
+management:
+  gateway:
+    enabled: true
+  endpoints:
+    web :
+      exposure :
+        include: "*"
+  metrics:
+    distribution:
+      percentile-histogram:
+        http :
+          server :
+            requests: true
+  tracing:
+    sampling:
+      probability: 1.0
+  observations :
+    key-value :
+      application : api-gateway-service
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8181/realms/master
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: product-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/products/**
+          filters:
+            - TokenRelay
+
+        - id: order-service
+          uri: http://localhost:8083
+          predicates:
+            - Path=/api/orders/**
+          filters:
+            - TokenRelay
+
+        - id: inventory-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/api/inventory/**
+          filters:
+            - TokenRelay
+
+        - id: product_service_swagger
+          uri: http://localhost:8081
+          predicates:
+            - Path=/aggregate/product-service/api-docs
+          filters:
+            - SetPath=/api-docs
+
+        - id: order_service_swagger
+          uri: http://localhost:8083
+          predicates:
+            - Path=/aggregate/order-service/api-docs
+          filters:
+            - SetPath=/api-docs
+
+        - id: inventory_service_swagger
+          uri: http://localhost:8082
+          predicates:
+            - Path=/aggregate/inventory-service/api-docs
+          filters:
+            - SetPath=/api-docs
+
+        - id: notification_service_swagger
+          uri: http://localhost:8084
+          predicates:
+            - Path=/aggregate/notification-service/api-docs
+          filters:
+            - SetPath=/api-docs
+
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+
+springdoc:
+  swagger-ui:
+    paths: "/swagger-ui.html"
+    urls:
+      - name: Product Service Swagger
+        url: "/aggregate/product-service/api-docs"
+      - name: Order Service Swagger
+        url: "/aggregate/order-service/api-docs"
+      - name: Inventory Service Swagger
+        url: "/aggregate/inventory-service/api-docs"
+      - name: Notification Service Swagger
+        url: "/aggregate/notification-service/api-docs"
+
+  api-docs:
+    paths: "/api-docs"
