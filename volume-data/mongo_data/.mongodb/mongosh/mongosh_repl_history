@@ -1,0 +1,72 @@
+db.products.find({}, { _id: 1 }).pretty()
+]);
+    { name: "Fitbit Charge 6", description: "Fitness tracker with heart rate monitoring", price: 149.99 }
+    { name: "DJI Mini 3 Pro", description: "Compact and feature-packed drone with 4K video", price: 759.99 },
+    { name: "Razer DeathAdder V3", description: "Lightweight gaming mouse with high precision", price: 69.99 },
+    { name: "Canon EOS R5", description: "Professional mirrorless camera with 8K video", price: 3899.99 },
+    { name: "Samsung 980 Pro SSD", description: "High-speed NVMe SSD (2TB)", price: 179.99 },
+    { name: "Bose QuietComfort Earbuds II", description: "Premium noise-canceling wireless earbuds", price: 299.99 },
+    { name: "Apple Watch Series 9", description: "Smartwatch with advanced health tracking", price: 429.99 },
+    { name: "Corsair K95 RGB Platinum", description: "Mechanical gaming keyboard with customizable RGB", price: 199.99 },
+    { name: "Nvidia RTX 4090", description: "High-performance graphics card for gaming and AI", price: 1599.99 },
+    { name: "Amazon Echo Dot (5th Gen)", description: "Smart speaker with Alexa", price: 49.99 },
+    { name: "GoPro Hero 11 Black", description: "High-end action camera with 5.3K recording", price: 399.99 },
+    { name: "Xbox Series X", description: "Microsoft's most powerful gaming console", price: 499.99 },
+    { name: "PlayStation 5", description: "Sony next-gen gaming console", price: 499.99 },
+    { name: "LG C2 OLED TV", description: "55-inch 4K OLED smart TV", price: 1499.99 },
+    { name: "Logitech MX Master 3S", description: "Ergonomic wireless mouse for productivity", price: 99.99 },
+    { name: "Dell XPS 13", description: "Compact and powerful ultrabook", price: 1299.99 },
+    { name: "MacBook Pro 16-inch", description: "Powerful laptop with M2 Pro chip", price: 2499.00 },
+    { name: "Sony WH-1000XM5", description: "Noise-canceling wireless headphones", price: 349.99 },
+    { name: "Samsung Galaxy S23", description: "Flagship Android phone with AMOLED display", price: 899.99 },
+    { name: "Apple iPhone 15", description: "Latest Apple smartphone with A16 Bionic chip", price: 999.99 },
+db.products.insertMany([
+use product_db
+db.getUsers()
+db.getUser()
+use admin
+]);
+    { name: "Fitbit Charge 6", description: "Fitness tracker with heart rate monitoring", price: 149.99 }
+    { name: "DJI Mini 3 Pro", description: "Compact and feature-packed drone with 4K video", price: 759.99 },
+    { name: "Razer DeathAdder V3", description: "Lightweight gaming mouse with high precision", price: 69.99 },
+    { name: "Canon EOS R5", description: "Professional mirrorless camera with 8K video", price: 3899.99 },
+    { name: "Samsung 980 Pro SSD", description: "High-speed NVMe SSD (2TB)", price: 179.99 },
+    { name: "Bose QuietComfort Earbuds II", description: "Premium noise-canceling wireless earbuds", price: 299.99 },
+    { name: "Apple Watch Series 9", description: "Smartwatch with advanced health tracking", price: 429.99 },
+    { name: "Corsair K95 RGB Platinum", description: "Mechanical gaming keyboard with customizable RGB", price: 199.99 },
+    { name: "Nvidia RTX 4090", description: "High-performance graphics card for gaming and AI", price: 1599.99 },
+    { name: "Amazon Echo Dot (5th Gen)", description: "Smart speaker with Alexa", price: 49.99 },
+    { name: "GoPro Hero 11 Black", description: "High-end action camera with 5.3K recording", price: 399.99 },
+    { name: "Xbox Series X", description: "Microsoft's most powerful gaming console", price: 499.99 },
+    { name: "PlayStation 5", description: "Sony next-gen gaming console", price: 499.99 },
+    { name: "LG C2 OLED TV", description: "55-inch 4K OLED smart TV", price: 1499.99 },
+    { name: "Logitech MX Master 3S", description: "Ergonomic wireless mouse for productivity", price: 99.99 },
+    { name: "Dell XPS 13", description: "Compact and powerful ultrabook", price: 1299.99 },
+    { name: "MacBook Pro 16-inch", description: "Powerful laptop with M2 Pro chip", price: 2499.00 },
+    { name: "Sony WH-1000XM5", description: "Noise-canceling wireless headphones", price: 349.99 },
+    { name: "Samsung Galaxy S23", description: "Flagship Android phone with AMOLED display", price: 899.99 },
+    { name: "Apple iPhone 15", description: "Latest Apple smartphone with A16 Bionic chip", price: 999.99 },
+db.products.insertMany([
+]);
+    { name: "Fitbit Charge 6", description: "Fitness tracker with heart rate monitoring", price: 149.99 }
+    { name: "DJI Mini 3 Pro", description: "Compact and feature-packed drone with 4K video", price: 759.99 },
+    { name: "Razer DeathAdder V3", description: "Lightweight gaming mouse with high precision", price: 69.99 },
+    { name: "Canon EOS R5", description: "Professional mirrorless camera with 8K video", price: 3899.99 },
+    { name: "Samsung 980 Pro SSD", description: "High-speed NVMe SSD (2TB)", price: 179.99 },
+    { name: "Bose QuietComfort Earbuds II", description: "Premium noise-canceling wireless earbuds", price: 299.99 },
+    { name: "Apple Watch Series 9", description: "Smartwatch with advanced health tracking", price: 429.99 },
+    { name: "Corsair K95 RGB Platinum", description: "Mechanical gaming keyboard with customizable RGB", price: 199.99 },
+    { name: "Nvidia RTX 4090", description: "High-performance graphics card for gaming and AI", price: 1599.99 },
+    { name: "Amazon Echo Dot (5th Gen)", description: "Smart speaker with Alexa", price: 49.99 },
+    { name: "GoPro Hero 11 Black", description: "High-end action camera with 5.3K recording", price: 399.99 },
+    { name: "Xbox Series X", description: "Microsoft's most powerful gaming console", price: 499.99 },
+    { name: "PlayStation 5", description: "Sony next-gen gaming console", price: 499.99 },
+    { name: "LG C2 OLED TV", description: "55-inch 4K OLED smart TV", price: 1499.99 },
+    { name: "Logitech MX Master 3S", description: "Ergonomic wireless mouse for productivity", price: 99.99 },
+    { name: "Dell XPS 13", description: "Compact and powerful ultrabook", price: 1299.99 },
+    { name: "MacBook Pro 16-inch", description: "Powerful laptop with M2 Pro chip", price: 2499.00 },
+    { name: "Sony WH-1000XM5", description: "Noise-canceling wireless headphones", price: 349.99 },
+    { name: "Samsung Galaxy S23", description: "Flagship Android phone with AMOLED display", price: 899.99 },
+    { name: "Apple iPhone 15", description: "Latest Apple smartphone with A16 Bionic chip", price: 999.99 },
+db.products.insertMany([
+use product_db
