@@ -1,0 +1,23 @@
+package com.store.inventoryservice.controller;
+
+import com.store.inventoryservice.dto.InventoryRequestDTO;
+import com.store.inventoryservice.dto.InventoryResponseDTO;
+import com.store.inventoryservice.service.InventoryService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/inventory")
+@RequiredArgsConstructor
+public class InventoryController {
+
+    private final InventoryService inventoryService;
+    @GetMapping("/get-inventory")
+    public String getInventory() {
+        return ;
+    }
+    @PostMapping("/check-stock")
+    public InventoryResponseDTO checkStock(@RequestBody InventoryRequestDTO inventoryRequestDTO) {
+        return inventoryService.isInStock(inventoryRequestDTO.getProductId(), inventoryRequestDTO.getRequestedQuantity());
+    }
+}

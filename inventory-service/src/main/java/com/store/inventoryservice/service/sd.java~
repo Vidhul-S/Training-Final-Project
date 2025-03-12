@@ -1,0 +1,23 @@
+package com.store.inventoryservice.service;
+
+import com.empapp.dto.Department;
+import com.store.inventoryservice.dto.InventoryRequestDTO;
+import com.store.inventoryservice.dto.InventoryResponseDTO;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.*;
+
+@Service
+@FeignClient(name = "departments")
+public interface InventroyControllerProxyService {
+
+    @RequestMapping("/api/inventory")
+    @PostMapping("/check-stock")
+    @CircuitBreaker(name = "cb", fallbackMethod = "DeptFallBack")
+    public InventoryResponseDTO checkStock(@RequestBody InventoryRequestDTO inventoryRequestDTO)
+
+    default Department DeptFallBack(String name ,Throwable throwable){
+        return new Department(0,null,"Not Found");
+    }
+}

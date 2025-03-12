@@ -1,0 +1,38 @@
+package com.store.productservice.service;
+
+import com.store.productservice.dto.ProductRequestDTO;
+import com.store.productservice.dto.ProductResponseDTO;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import lombok.AllArgsConstructor;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.*;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+@Service
+@FeignClient(name = "order-service", url = "http://localhost:8083/api/order")
+public interface ProductControllerService {
+    @CircuitBreaker(name = "Unable To Add Product", fallbackMethod = "FallBackDbIssue")
+    @PostMapping("/add-product")
+    public ResponseEntity<ProductResponseDTO> createProduct(@RequestBody ProductRequestDTO productRequestDTO) ;
+
+    default ResponseEntity<OrderResponseDTO> FallBackDbIssue(Throwable throwable){
+        return ResponseEntity.notFound().build();
+    }
+
+    @PostMapping("/get-product")
+    public ResponseEntity<ProductResponseDTO> getProduct(@RequestBody ProductRequestDTO productRequestDTO) {
+        return ResponseEntity.ok(productService.findProductById(productRequestDTO.getId()).orElse(null));
+    }
+    @GetMapping("/get-all-products")
+    public ResponseEntity<List<ProductResponseDTO>> getAllProducts() {
+        return ResponseEntity.ok(productService.getAllProducts());
+    }
+    @DeleteMapping("delete/{id}")
+    public void deleteProduct(@PathVariable String id) {
+        productService.deleteProduct(id);
+    }
+}

@@ -1,0 +1,16 @@
+package com.store.notificationservice.kafka;
+
+import com.store.notificationservice.dto.OrderNotificationDTO;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.stereotype.Service;
+
+@Slf4j
+@Service
+public class OrderNotificationConsumer {
+
+    @KafkaListener(topics = "order-notif", groupId = "notif-group")
+    public void consumeOrderNotification(OrderNotificationDTO dto) {
+        log.info("📢 Order Notification: {}", dto.getMessage());
+    }
+}
